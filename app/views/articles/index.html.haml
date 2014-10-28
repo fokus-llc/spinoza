@@ -1,0 +1,13 @@
+
+.fx-blurb.hidden
+
+  %h2 Articles
+  = render 'blurb'
+
+  - if user_can_create_article?
+    %ul.fg-actions
+      %li
+        = link_to 'write new article', new_article_path
+
+= render 'browser'
+

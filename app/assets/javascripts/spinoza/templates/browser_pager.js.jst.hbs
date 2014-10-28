@@ -1,0 +1,16 @@
+
+<menu>
+  <li style="display: none" class="fx-next">
+    <a href="#">next page &raquo;</a>
+  </li>
+  <li style="display: none" class="fx-prev">
+    <a href="#">&laquo; previous page</a>
+  </li>
+</menu>
+
+<div class="fx-output">
+  <span data-bind-text="pager:count | commified"/> results:
+  page <span data-bind-text="pager:page | commified"/>
+  of <span data-bind-text="pager:maximumPage | commified"/>
+</div>
+

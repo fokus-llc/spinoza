@@ -1,0 +1,26 @@
+<fieldset>
+
+  <legend>Citation: <span data-bind-text="cite:name"></span></legend>
+
+  <dl class="fg-properties">
+
+    <dt>Title</dt>
+    <dd data-bind-text="source:name"></dd>
+
+    <div data-bind-show="source:author_names | list">
+      <dt>Authors</dt>
+      <dd data-bind-text="source:author_names | list"></dd>
+    </div>
+
+    <div data-bind-show="cite:cited_extent">
+      <dt>Pages</dt>
+      <dd data-bind-text="cite:cited_extent"></dd>
+    </div>
+
+  </dl>
+
+  <ul class="fg-actions">
+    <li><a class="fx-edit" href="#">Edit</a></li>
+  </ul>
+
+</fieldset>

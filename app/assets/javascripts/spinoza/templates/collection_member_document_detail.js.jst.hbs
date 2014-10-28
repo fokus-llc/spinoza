@@ -1,0 +1,21 @@
+
+<a id="{{id}}"></a>
+<header>
+  <h4><a href="/articles/{{parameterize title}}?document_link={{id}}">{{title}}</a></h4>
+  {{#if aliases}}
+    <h5>(a.k.a. {{list aliases}})</h5>
+  {{/if}}
+  {{#if date}}
+    <h5>{{date}}</h5>
+  {{/if}}
+</header>
+
+{{#if body}}
+<section class="fx-article-body">
+  {{{body}}}
+</section>
+{{/if}}
+
+<section class="fx-links clearfix">
+</section>
+

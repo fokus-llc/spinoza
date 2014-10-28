@@ -1,0 +1,85 @@
+
+%h2
+  = link_to 'Project', projects_path
+  %span= @project_slug
+
+.fx-project-content.hidden
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+      function calculateRowsForDisplay() {
+        var $main = $('#fl-main'),
+          mainHeight = $main.height(),
+          mainWidth = $main.width(),
+          tbodyHeight = (mainHeight - 320),
+          rowHeight = ((mainWidth > 1000) ? 23 : 46),
+          rows = Math.floor(tbodyHeight / rowHeight);
+        return Math.max(rows, 5);
+      }
+
+      var root = window,
+        BB = root.Backbone,
+        Paginator = root.Paginator,
+        app = root.Spinoza,
+
+        $contents = $('.fx-project-content'),
+
+        filter = new BB.Model({
+          project       : '#{@project_slug}',
+          document_type : 'collection',
+          entity_type   : 'event',
+          sort          : '#{@project_sort}',
+        }),
+
+        paginator = new Paginator({
+          limit : calculateRowsForDisplay()
+        }),
+
+        collection = new app.Collections.Documents(null, {
+          paginator : paginator
+        }),
+
+        project = new Spinoza.Models.Project({
+          slug : '#{@project_slug}'
+        }),
+
+        browser = new app.Views.Documents.Browser({
+          collection   : collection,
+          filter       : filter,
+          paginator    : paginator,
+          loadProjects : false,
+          tableView    : app.Views.Documents.TimelineTable
+        });
+
+      project.fetch().
+        then(function() {
+          $('h2 span').text(project.get('name'));
+        });
+
+      browser.fetchFilteredCollection().
+        then(function() {
+          if (collection.length < 2) {
+            var timeline = collection.first();
+            window.location = '/articles/' +
+              parameterize(timeline.get('title')) +
+              '?document_link=' + timeline.id;
+          }
+          else {
+            $contents.append('<h3>Timelines</h3>');
+            $contents.append(browser.render().$el);
+            $('.fr-filter').hide();
+            $contents.removeClass('hidden');
+          }
+        }).
+        fail(function() {
+          console.log("Failed to fetch projects");
+        });
+
+      $('#fl-primary').removeClass('hidden');
+
+    });
+

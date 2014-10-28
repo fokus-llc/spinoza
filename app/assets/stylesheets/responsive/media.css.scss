@@ -1,0 +1,17 @@
+
+/* width less than best, greater than fallback */
+@media only screen and (max-width: $best-format-minimum-width) {
+
+  #fl-banner {
+    img { @include hidden; }
+    h1 { line-height: inherit; }
+  }
+
+}
+
+@media only screen and (max-width: $fallback-format-maximum-width) {
+
+  #fl-application { @include fg-unpadded; }
+
+}
+

@@ -1,0 +1,98 @@
+
+#fv-home {
+
+  #fl-primary {
+    float: left;
+    width: 70%;
+  }
+
+  #fl-epilogue {
+    float: right;
+    width: 30%;
+  }
+
+  #fl-menubar {
+    li.fv-home { @include fg-menu-selected; }
+  }
+
+  .fx-events {
+  }
+
+  .fx-projects {
+    margin-top: $tiny;
+  }
+
+  .fx-entities {
+    margin-top: $tiny;
+  }
+
+  .fx-sidebar { // ui-tabs ui-widget ui-widget-content
+
+    margin-left: $small;
+
+    border: 2px solid $borders-color;
+    background: none;
+    font-size: 80%;
+
+    .ui-tabs-nav { // ul ui-widget-header
+
+      border: none; // ui-widget-header
+      background: none;
+      background-color: $borders-color;
+
+      padding: $nil;
+      padding-left: 12px;
+
+      li {
+        margin: $nil;
+        margin-left: 10px;
+        padding: 2px;
+        a { padding: $nil; }
+      }
+
+      .ui-state-default {
+
+        border: none;
+        background: none;
+        background-color: $borders-color;
+
+        a { color: $background-color; }
+
+      }
+
+      .ui-state-active { // li .ui-state-default .ui-tabs-active
+
+        border: none;
+        background: none;
+        background-color: $borders-color;
+
+        a { // ui-tabs-anchor
+          color: white;
+          font-weight: bold;
+        }
+
+      }
+
+    }
+
+    .ui-tabs-panel { // .ui-widget-content
+
+      border: none;
+      background: none;
+      padding: $tiny;
+      overflow: scroll;
+
+      li { margin-top: 5px; }
+
+      a { color: black; }
+      a:hover {
+        color: $borders-color;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+}
+

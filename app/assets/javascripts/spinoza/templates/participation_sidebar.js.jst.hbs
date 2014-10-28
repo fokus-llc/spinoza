@@ -1,0 +1,31 @@
+
+<ul>
+  <li><a href="#fx-details">details</a></li>
+</ul>
+
+<div id="fx-details">
+
+{{#if roles}}
+<h4>Roles</h4>
+<div id="roles-{{id}}">
+  <ul>
+  {{#each roles}}
+    <li>{{this}}</li>
+  {{/each}}
+  </ul>
+</div>
+{{/if}}
+
+{{#if relations}}
+<h4>Relations</h4>
+<div id="relations-{{id}}">
+  <ul>
+  {{#eachRelation relations}}
+    <li>{{linkRelation}}</li>
+  {{/eachRelation}}
+  </ul>
+</div>
+{{/if}}
+
+</div>
+

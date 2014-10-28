@@ -1,0 +1,41 @@
+
+%h3 Search: #{@query}
+
+- if @pub_results.present?
+
+  %table
+    %tr
+      %th{ :style => 'width: 120px' } &nbsp;
+      %th &nbsp;
+      %th Project
+      %th User
+
+    - @pub_results.each do |pub|
+      %tr
+        %td #{time_ago_in_words(pub.published)} ago
+
+        %td
+          - document_type = pub.document.document_type.name
+          - if document_type == 'entry'
+            - entity_type = pub.entity.try(:entity_type).try(:name)
+            = link_to "#{entity_type.capitalize}: #{pub.name}", entity_path(pub.entity_id)
+          -else
+            = link_to pub.name, article_path(pub.document_id)
+
+        %td= link_to pub.project.name, project_path(pub.project)
+        %td= link_to pub.user.name, user_path(pub.user)
+
+- else
+
+  %p
+    No results
+
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+    });
+

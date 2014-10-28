@@ -1,0 +1,27 @@
+<fieldset>
+  <legend>Preview</legend>
+
+  <header>
+    <h4>
+      {{#if type}}
+        {{capitalize type}}:
+      {{/if}}
+      {{title}}
+    </h4>
+
+    {{#if aliases}}
+      <h5>(a.k.a. {{list aliases}})</h5>
+    {{/if}}
+
+    {{#if date}}
+      <h5>{{date}}</h5>
+    {{/if}}
+  </header>
+
+  {{#if body}}
+  <section class="fx-article-body">
+    {{{body}}}
+  </section>
+  {{/if}}
+
+</fieldset>

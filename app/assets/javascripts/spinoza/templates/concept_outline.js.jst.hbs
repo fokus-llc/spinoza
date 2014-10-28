@@ -1,0 +1,6 @@
+{{#if parent_concept_id }}
+  <li class="fx-concept" data-title="{{name}}">
+    <a href="/concepts/{{slug}}?concept_id={{concept_id}}">{{#if short_name}}{{short_name}}{{else}}{{name}}{{/if}}</a>
+  </li>
+{{/if}}
+<li class="fx-children"></li>

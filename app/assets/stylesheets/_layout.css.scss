@@ -1,0 +1,58 @@
+
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/footer";
+
+#fl-application {
+  width: 100%;
+}
+
+#fl-top {
+
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  height: 95px;
+
+  @include fg-front-layer;
+  background-color: $background-color;
+
+}
+
+#fl-main {
+
+  position: absolute;
+  top: $main-top;
+  bottom: 30px; // footer?
+  left: 30px;
+  right: 30px;
+
+  overflow-y: scroll;
+
+}
+
+#fl-primary {
+  overflow-x: scroll;
+}
+
+#fl-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#fl-contentinfo {
+
+  width: 100%;
+
+  padding: $teeny $nil;
+
+  @include fg-front-layer;
+  @include fg-colors-inverted;
+
+  text-align: right;
+  small { margin-right: $small; }
+
+}
+

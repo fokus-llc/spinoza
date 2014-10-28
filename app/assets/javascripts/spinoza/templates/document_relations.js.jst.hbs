@@ -1,0 +1,69 @@
+
+<ul>
+  {{#if roles}}
+    <li><a href="#roles-{{id}}">roles</a></li>
+  {{/if}}
+  {{#if relations}}
+    <li><a href="#relations-{{id}}">relations</a></li>
+  {{/if}}
+  {{#if parties}}
+    <li><a href="#parties-{{id}}">participants</a></li>
+  {{/if}}
+  {{#if associations}}
+    <li><a href="#associations-{{id}}">associations</a></li>
+  {{/if}}
+  {{#if concepts}}
+    <li><a href="#concepts-{{id}}">categories</a></li>
+  {{/if}}
+</ul>
+
+{{#if roles}}
+<div id="roles-{{id}}">
+  <ul>
+  {{#each roles}}
+    <li>{{this}}</li>
+  {{/each}}
+  </ul>
+</div>
+{{/if}}
+
+{{#if relations}}
+<div id="relations-{{id}}">
+  <ul>
+  {{#eachRelation relations}}
+    <li>{{linkRelation}}</li>
+  {{/eachRelation}}
+  </ul>
+</div>
+{{/if}}
+
+{{#if parties}}
+<div id="parties-{{id}}">
+  <ul>
+  {{#each parties}}
+    <li>{{linkParticipant}}</li>
+  {{/each}}
+  </ul>
+</div>
+{{/if}}
+
+{{#if associations}}
+<div id="associations-{{id}}">
+  <ul>
+  {{#each associations}}
+    <li>{{linkDocument}}</li>
+  {{/each}}
+  </ul>
+</div>
+{{/if}}
+
+{{#if concepts}}
+<div id="concepts-{{id}}">
+  <ul>
+  {{#each concepts}}
+    <li>{{linkConcept}}</li>
+  {{/each}}
+  </ul>
+</div>
+{{/if}}
+

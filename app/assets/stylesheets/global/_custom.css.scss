@@ -1,0 +1,45 @@
+
+html {
+}
+
+body {
+  background: $background-color;
+}
+
+a {
+  @include hover-link();
+}
+
+a:link, a:visited {
+  color: $unvisited-link-color;
+}
+
+ul {
+  @include fg-seamless;
+}
+
+summary {
+  font-weight: bold;
+  display: inline;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0.35em 0.70em;
+}
+
+h2, h3, h4, h5 {
+  margin: $tiny 0 $tiny 0;
+}
+
+nav ul {
+  @include inline-list;
+  li {
+    padding-left: $small;
+  }
+}
+

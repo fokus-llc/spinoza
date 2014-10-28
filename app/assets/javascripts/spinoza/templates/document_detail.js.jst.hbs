@@ -1,0 +1,48 @@
+
+<header>
+
+  <h3>
+    {{#if collection_type}}
+      {{#if type}}
+        <a href="/articles?document_type=collection&entity_type={{entity_type}}">{{capitalize type}}</a>:
+      {{/if}}
+    {{else}}
+      {{#if type}}
+        <a href="/articles?entity_type={{entity_type}}">{{capitalize type}}</a>:
+      {{/if}}
+    {{/if}}
+    {{title}}
+  </h3>
+
+  {{#if aliases}}
+    <h4>(a.k.a. {{list aliases}})</h4>
+  {{/if}}
+
+  {{#if date}}
+    <h4>{{date}}</h4>
+  {{/if}}
+
+  <dl class="clearfix">
+    <dt>Updated</dt>
+    <dd>{{ago assessed}}</dd>
+
+    <dt>Updated by</dt>
+    <dd>{{user}}</dd>
+  </dl>
+
+</header>
+
+<section class="fx-geography"></section>
+
+{{#if body}}
+<section class="fx-article-body">
+  {{{body}}}
+</section>
+{{/if}}
+
+<section class="fx-links clearfix"></section>
+
+<section class="fx-filter"></section>
+
+<section class="fx-article-members"></section>
+

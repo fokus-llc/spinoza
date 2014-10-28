@@ -1,0 +1,37 @@
+<div class="fx-links">
+
+  <div class="fx-target-preview"></div>
+
+  <dl class="fg-properties">
+
+    <dt>Link target</dt>
+    <dd>
+      <input
+        type="text"
+        class="fx-target"
+        size="60"
+        data-bind-value="editableLink:target_title"/>
+    </dd>
+
+    {{#if editLinkText}}
+    <dt>Link text</dt>
+    <dd>
+      <input
+        type="text"
+        size="60"
+        data-bind-value="editableLink:text"/>
+    </dd>
+    {{/if}}
+
+  </dl>
+
+  <ul class="fg-actions">
+    <li><input type="button" value="Cancel" class="fx-cancel"></li>
+    {{#if enableRemove}}
+    <li><input type="button" value="Remove" class="fx-remove"></li>
+    {{/if}}
+    <li><input type="button" value="Update" class="fx-submit" data-bind-show="editableLink:target_link"></li>
+  </ul>
+
+</div>
+

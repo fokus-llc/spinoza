@@ -1,0 +1,12 @@
+
+%p
+  %dfn Articles
+  are hypertext narratives written and edited by the users of a
+  #{ link_to 'project', projects_path}.
+  They may define a
+  #{ link_to 'perspective', articles_path(:document_type => 'perspective')}.
+  on a topic or describe a
+  #{ link_to 'collection', articles_path(:document_type => 'collection')}.
+  such as a timeline.
+  = link_to '&laquo; read more &raquo;'.html_safe, '/about'
+

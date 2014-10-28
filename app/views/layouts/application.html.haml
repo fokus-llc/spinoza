@@ -1,0 +1,14 @@
+!!! 5
+- html_tag :class => "no-js" do
+
+  = render "layouts/head"
+
+  %body{ :id => "#{ body_dom_id }", :class => "#{ body_dom_class }" }
+
+    #fl-application{ :role => "application" }
+      = render "layouts/top"
+      = render "layouts/middle"
+      = render "layouts/bottom"
+
+    = render "layouts/javascripts"
+

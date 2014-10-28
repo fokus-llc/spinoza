@@ -1,0 +1,28 @@
+
+%ul#about_toc{ :style => 'float: right; padding: 1em' }
+  %li= link_to "About #{application_name}", '#about'
+
+%h2{ :id => 'about' } About #{application_name}
+
+%p
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+  non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+      $toc.find('a').click(function(e) {
+        e.preventDefault();
+        var $anchor = $(e.target.hash);
+        $('#fl-main').scrollTo($anchor[0].offsetTop);
+        $anchor.effect('highlight', { color : 'sandybrown' });
+      });
+
+    })

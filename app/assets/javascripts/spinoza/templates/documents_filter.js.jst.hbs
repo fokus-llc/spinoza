@@ -1,0 +1,50 @@
+{{! fieldset }}
+
+<div class="fg-labeled-input">
+  <label>Article type</label>
+  <select name="document_type" data-bind-value="filter:document_type">
+    <option value="">All</option>
+    <option value="perspective">Perspectives</option>
+    <option value="collection">Collections</option>
+  </select>
+</div>
+
+<div class="fg-labeled-input">
+  <label>Entity type</label>
+  <select name="entity_type" data-bind-value="filter:entity_type">
+
+    <option value="">All</option>
+
+    <option value="person">People</option>
+
+    <option value="group">Groups</option>
+    <optgroup label="Group type">
+      <option value="organization">Organizations</option>
+      <option value="enterprise">Business enterprises</option>
+      <option value="agency">Government agencies</option>
+      <option value="project">Projects</option>
+    </optgroup>
+
+    <option value="place">Places</option>
+    <optgroup label="Place type">
+      <option value="facility">Facilities</option>
+      <option value="region">Geographical regions</option>
+      <option value="country">Countries</option>
+      <option value="administrative-district">Administrative districts</option>
+    </optgroup>
+
+    <option value="event">Events</option>
+
+    <option value="work">Works of reference</option>
+
+  </select>
+</div>
+
+<div class="fg-labeled-input fx-document-filter-order">
+  <label>Order by</label>
+  <select name="sort" data-bind-value="filter:sort">
+    <option value="recent">Last updated</option>
+    <option value="name">Name</option>
+  </select>
+</div>
+

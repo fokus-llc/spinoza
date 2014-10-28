@@ -1,0 +1,14 @@
+{{#if concept_set_id }}
+<li class="fx-concept-set" data-title="{{name}}">
+  {{#if short_name}}
+    {{short_name}}
+  {{else}}
+    {{name}}
+  {{/if}}
+</li>
+{{else}}
+<li class="fx-concept" data-title="{{name}}">
+  <a href="#{{slug}}">{{#if short_name}}{{short_name}}{{else}}{{name}}{{/if}}</a>
+</li>
+{{/if}}
+<li class="fx-children"></li>

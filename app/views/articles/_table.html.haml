@@ -1,0 +1,32 @@
+
+%h3 Recent edits
+
+%table
+  %thead
+    %th &nbsp;
+    %th &nbsp;
+    %th User
+    %th Project
+  %tbody#fx-publications-rows
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+      var app = window.Spinoza;
+        pubs = new app.Collections.Documents(),
+        view = new app.Views.Documents.Rows({
+          collection : pubs,
+          el         : '#fx-publications-rows'
+        });
+
+      pubs.fetch({ limit : 5 }).then(function() {
+        view.render();
+      }).fail(function() {
+        alert("Failed to load recent edits");
+      });;
+
+    });
+

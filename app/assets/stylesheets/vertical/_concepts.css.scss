@@ -1,0 +1,18 @@
+
+#fv-concepts {
+
+  #fl-menubar {
+    li.fv-concepts { @include fg-menu-selected; }
+  }
+
+  ul {
+    padding-left: $nil;
+    list-style: none;
+  }
+
+  .ui-state-default {
+    background: white url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
+  }
+
+}
+

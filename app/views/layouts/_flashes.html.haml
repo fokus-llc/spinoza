@@ -1,0 +1,7 @@
+
+%ul#fl-flashes
+  - flash.each do |key, value|
+    - next if value == true
+    %li{ :class => "fg-flash-#{key}" }
+      = value
+

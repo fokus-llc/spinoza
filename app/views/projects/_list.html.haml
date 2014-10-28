@@ -1,0 +1,26 @@
+
+%h3 Projects
+
+%ul#fx-projects-list
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+      var app = window.Spinoza;
+        projects = new app.Collections.Projects(),
+        view = new app.Views.Projects.List({
+          collection : projects,
+          el         : '#fx-projects-list'
+        });
+
+      projects.fetch({ limit : 5 }).then(function() {
+        view.render();
+      }).fail(function() {
+        alert("Failed to load projects");
+      });;
+
+    });
+

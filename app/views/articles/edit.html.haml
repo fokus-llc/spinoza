@@ -1,0 +1,24 @@
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+      var root = window,
+        app = root.Spinoza,
+        document = new app.Models.LinkedDocument({ link : '#{@linkable_id}' });
+
+      function renderEditor($container) {
+        var view = new app.Views.Documents.GuiEditor({ model : document });
+        view.render();
+        $container.append(view.$el);
+      }
+
+      document.fetch().then(function() {
+        renderEditor($('#fl-primary'));
+      }).
+      fail(function() { alert("Failed to load article."); });
+
+    });
+

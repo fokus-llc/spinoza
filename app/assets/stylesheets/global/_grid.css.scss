@@ -1,0 +1,23 @@
+
+.fg-horizontal-pane {
+  @include fg-span-full;
+}
+
+.fg-alpha-pane {
+  @include fg-pane-half-base(alpha);
+  min-width: 320px; // compass min-width doesn't work here
+}
+
+.fg-omega-pane {
+  @include fg-pane-half-base(omega);
+}
+
+.fg-alpha-gutter {
+  @include fg-pane-quarter-base(alpha);
+  min-width: 160px;
+}
+
+.fg-omega-gutter {
+  @include fg-pane-3quarter-base(omega);
+}
+

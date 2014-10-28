@@ -1,0 +1,42 @@
+{{! fieldset }}
+
+<div class="fg-labeled-input">
+  <label>Entity type</label>
+  <select name="entity_type" data-bind-value="filter:entity_type">
+
+    <option value="">All</option>
+
+    <option value="person">People</option>
+
+    <option value="organization">Organizations</option>
+    <optgroup label="Organization type">
+      <option value="enterprise">Business enterprise</option>
+      <option value="agency">Government agency</option>
+      <option value="project">Project</option>
+    </optgroup>
+
+    <option value="place">Places</option>
+    <optgroup label="Place type">
+      <option value="facility">Facility</option>
+      <option value="region">Geographical region</option>
+    </optgroup>
+
+    <option value="event">Events</option>
+
+    <option value="work">Works of reference</option>
+    <optgroup label="Work type">
+      <option value="legislation">Legislation</option>
+      <option value="web-site">Web site</option>
+    </optgroup>
+
+  </select>
+</div>
+
+<div class="fg-labeled-input">
+  <label>Order by</label>
+  <select name="sort" data-bind-value="filter:sort">
+    <option value="recent">Last updated</option>
+    <option value="name">Name</option>
+  </select>
+</div>
+

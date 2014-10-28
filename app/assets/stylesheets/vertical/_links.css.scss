@@ -1,0 +1,32 @@
+.fx-links-editor {
+
+  background: $background-color;
+  padding: $small;
+
+  width: 60%;
+
+  dt {
+    width: 125px;
+  }
+
+  textarea {
+    width: 560px;
+  }
+
+  fieldset {
+    label {
+      margin-top: $tiny;
+      margin-left: $teeny;
+    }
+    input[type="text"] {
+      margin-top: $tiny;
+      margin-left: $teeny;
+    }
+    input[type="radio"] {
+      margin-top: $tiny;
+      margin-left: $small;
+    }
+  }
+
+}
+

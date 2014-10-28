@@ -1,0 +1,36 @@
+
+.fx-projects.fx-sidebar.hidden
+
+  %ul
+    %li
+      %a{ :href => '#fx-active-projects' } Recently active projects
+
+  #fx-active-projects
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+      var root = window,
+        app = root.Spinoza,
+        $sidebar = $('.fx-projects'),
+        $active = $('#fx-active-projects'),
+        projects = new app.Collections.Projects(),
+        view = new app.Views.Projects.List({
+          collection : projects
+        });
+
+      projects.fetch({ sort: 'recent', limit : 4 }).
+        then(function() {
+          $active.append(view.render().$el);
+          $sidebar.tabs();
+          $sidebar.removeClass('hidden');
+        }).
+        fail(function() {
+          console.log("Failed to load active projects");
+        });
+
+    });
+

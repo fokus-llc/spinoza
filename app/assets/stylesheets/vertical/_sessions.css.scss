@@ -1,0 +1,34 @@
+
+#fv-sessions {
+
+  form.fx-login {
+
+    label {
+      font-weight: bold;
+      color: brown;
+      display: inline-block;
+      width: 80px;
+    }
+
+    input {
+      margin-top: $small;
+    }
+
+    input[type="submit"] {
+      @include fg-flat-button(sienna);
+      font-weight: bold;
+    }
+
+
+  }
+
+  #fl-navigation nav.fl-authentication ul li a {
+    display: none;
+  }
+
+  #fl-menubar ul {
+    display: none;
+  }
+
+}
+

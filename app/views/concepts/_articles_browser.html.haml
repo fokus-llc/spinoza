@@ -1,0 +1,54 @@
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+      function calculateRowsForDisplay() {
+        var $main = $('#fl-main'),
+          mainHeight = $main.height(),
+          mainWidth = $main.width(),
+          tbodyHeight = (mainHeight - 300),
+          rowHeight = ((mainWidth > 1000) ? 23 : 46),
+          rows = Math.floor(tbodyHeight / rowHeight);
+        return Math.max(rows, 5);
+      }
+
+      var root = window,
+        BB  = root.Backbone,
+        Paginator = root.Paginator,
+        app = root.Spinoza,
+
+        $primary = $('#fl-primary'),
+
+        filter = new BB.Model({
+          sort        : 'recent',
+          concept     : '#{@concept_slug}'
+        }),
+
+        paginator = new Paginator({
+          limit : calculateRowsForDisplay()
+        }),
+
+        collection = new app.Collections.Documents(null, {
+          paginator : paginator
+        }),
+
+        browser = new app.Views.Documents.Browser({
+          collection   : collection,
+          filter       : filter,
+          paginator    : paginator,
+          loadProjects : true
+        });
+
+      browser.fetchFilteredCollection().
+        then(function() {
+          $primary.prepend(browser.render().$el);
+        }).
+        fail(function() {
+          console.log("Failed to fetch articles");
+        });
+
+    });
+

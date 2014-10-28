@@ -1,0 +1,47 @@
+
+<section>
+
+  <div class="fg-input">
+    <label>Title</label>
+    <input size="66"
+      placeholder="please enter a title"
+      type="text"
+      data-bind-value="document:title"/>
+  </div>
+
+  <div class="fg-input fx-projects">
+  </div>
+
+  <div class="fg-input">
+    <label>Type of subject</label>
+    <select name="document_entity_type" data-bind-value="document#documentEntityType">
+      <option value="perspective:person">Person</option>
+      <option value="perspective:enterprise">Business enterprise</option>
+      <option value="perspective:organization">Organization</option>
+      <option value="perspective:agency">Government agency</option>
+      <option value="perspective:project">Project</option>
+      <option value="perspective:facility">Facility</option>
+      <option value="perspective:region">Geographical region</option>
+      <option value="perspective:country">Country</option>
+      <option value="perspective:administrative-district">Administrative district</option>
+      <option value="perspective:event">Event</option>
+      <!--
+      <option value="collection:event">Collection: Events (Timeline)</option>
+      -->
+    </select>
+  </div>
+
+  <textarea></textarea>
+
+  <div class="fg-input">
+    <label>Comments</label>
+    <input size="66" type="text" data-bind-value="document:comments"/>
+  </div>
+
+  <ul class="fg-actions">
+    <li><input class="fx-submit" type="submit"/></li>
+    <li><a class="fx-cancel" href="#">cancel</a></li>
+  </ul>
+
+</section>
+

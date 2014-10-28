@@ -1,0 +1,21 @@
+h1. Spinoza
+
+A semantic knowledge management frontend for "lenzenslijper":https://github.com/fokus-llc/lenzenslijper.
+
+Spinoza is a work in progress, and is provided as-is, as open source
+software under the provisions of the BSD license. Patches are welcome!
+
+h2. Installation
+
+Install the "Spinoza" ontology in the lenzenslijper database instance:
+
+    psql -h {HOST} -u {USER} {INSTANCE} < db/ontology.sql
+
+Edit "config/application.yml" so that the value of "lenzenslijper_url" for the
+desired environment is set to the url of a deployed lenzensliper access point.
+
+Edit "config/database.yml" with the details of the lenzenslijper database.
+
+h2. License
+
+Copyright (c) 2014 Fokus LLC.  See LICENSE.txt for further details.

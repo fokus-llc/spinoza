@@ -1,0 +1,76 @@
+
+@import "global/base";
+@import "global/custom";
+@import "global/grid";
+@import "global/gutters";
+@import "global/tabs";
+
+@import "global/tags";
+
+@import "global/forms";
+
+ul.fg-actions {
+
+  margin: $tiny $tiny $tiny $nil;
+
+  li {
+    @include no-bullets;
+    float: left;
+    margin-right: $tiny;
+  }
+
+  button, a, input[type="submit"] { @include fg-flat-button; }
+
+}
+
+button.fg-action {
+  @include fg-flat-button;
+}
+
+ul.fg-inline {
+  @include inline-list;
+}
+
+.fg-no-lead {
+  margin-top: $nil;
+}
+
+.fg-breadcrumbs {
+  margin-bottom: $small !important;
+}
+
+ul.fg-undecorated {
+  li { @include no-bullets; }
+}
+
+dl.fg-properties {
+
+  @include clearfix;
+
+  dt {
+    font-weight: bold;
+    float: left;
+    clear: both;
+    margin-bottom: $tiny;
+  }
+
+  dt::after {
+    content: ":";
+  }
+
+  dd {
+    float: left;
+    margin-left: 0.25em;
+    margin-bottom: $tiny;
+  }
+
+}
+
+.fg-empty {
+  font-style: italic;
+}
+
+.fg-named-list {
+  margin: $tiny 0 $tiny 0;
+}
+

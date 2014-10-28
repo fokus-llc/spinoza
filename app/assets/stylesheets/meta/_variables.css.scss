@@ -1,0 +1,46 @@
+
+// Dimensions
+
+$nil:     0;
+$teeny:   0.25em; // nano
+$tiny:    0.5em;  // micro ... mini
+$small:   1em;    // macro (font-size)
+$medium:  1.5em;
+
+// Colors
+
+$unvisited-link-color: sienna;
+
+// Grid
+
+$total-columns:  4; // mobile first
+$column-width:   6em;
+$gutter-width:   1.5em;
+$grid-padding:   $gutter-width;
+$break-columns:  12;
+$break:          30em $break-columns;
+
+// Layout
+
+$application-padding:  20px;
+$contentinfo-height:   16px;
+
+$banner-image: "spinoza50.jpg";
+
+// Responsive
+
+$best-format-minimum-width:     800px; // full site for >=
+$fallback-format-maximum-width: 400px; // minimum site for <=
+
+// h5bp
+
+$font-color: #222;
+$font-size: 1em;
+$selected-background-color: #ff5e99;
+
+$background-color: linen;
+$borders-color: sienna;
+
+$main-top: 100px;
+
+

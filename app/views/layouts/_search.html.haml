@@ -1,0 +1,51 @@
+
+%form{ :id => 'fl-search' }
+  %input{ :id => 'fl-query', :type => 'text', :placeholder => 'Search' }
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+      var app = window.Spinoza;
+
+      function completeNames(prefix) {
+        var deferred = $.Deferred();
+        $.ajax({
+          url : app.Config.dataUrl('/public/titles'),
+          data : { prefix : prefix, limit : 10 }
+        }).then(function(results) {
+          deferred.resolve(results);
+        });
+        return deferred.promise();
+      }
+
+      var $query = $('#fl-query');
+      $query.autocomplete({
+
+        source: function(request, response) {
+          completeNames(request.term).then(function(results) {
+            response(results.items);
+          });
+        },
+
+        select: function(e, ui) {
+          e.preventDefault();
+          window.location = '/names?' + $.param({ id : ui.item.value });
+        },
+
+        open: function() {
+          var width = $(this).width();
+          $('.ui-autocomplete').css('width', '' + width + 'px');
+        }
+
+      });
+
+      $('#fl-search').submit(function(e) {
+        e.preventDefault();
+        window.location = '/search?' + $.param({ q : $query.val() });
+      });
+
+    });
+

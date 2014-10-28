@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+mf_debug "Metrics config loaded"
+
+class MetricFu::Rcov
+  def run_rcov?; true; end
+  def emit
+    ENV['COVERAGE'] = '1'
+   `rake spec`
+  end
+end
+
+MetricFu::Configuration.run do |config|
+
+  config.add_metric(:rcov)
+  config.add_graph(:rcov)
+
+  coverage_file = File.expand_path("coverage/rcov/rcov.txt", Dir.pwd)
+  config.configure_metric(:rcov, :external => coverage_file)
+
+  config.metrics -= [ :churn ]
+
+  config.reek = {
+    :dirs_to_reek        => %w[ app lib ],
+    :config_file_pattern => 'config/reek.yml'
+  }
+
+  config.roodi = {
+    :dirs_to_roodi => %w[ app lib ]
+  }
+
+end
+

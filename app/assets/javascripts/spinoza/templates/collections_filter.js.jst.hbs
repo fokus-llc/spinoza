@@ -1,0 +1,19 @@
+{{! fieldset }}
+
+<div class="fg-labeled-input">
+  <label>Type</label>
+  <select name="entity_type" data-bind-value="filter:entity_type">
+    <option value="">All</option>
+    <option value="event">List of events (timeline)</option>
+    <option value="work">List of works of reference</option>
+  </select>
+</div>
+
+<div class="fg-labeled-input">
+  <label>Order by</label>
+  <select name="sort" data-bind-value="filter:sort">
+    <option value="recent">Last updated</option>
+    <option value="name">Name</option>
+  </select>
+</div>
+

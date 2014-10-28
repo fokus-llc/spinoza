@@ -1,0 +1,95 @@
+
+- if @editable
+  %ul.fg-actions
+    %li
+      = link_to 'edit', edit_article_path(@linkable_id)
+
+-# MAIN
+
+- content_for :javascripts do
+
+  :javascript
+
+    jQuery(function($) {
+
+      var root = window,
+        app = root.Spinoza,
+        document = new app.Models.LinkedDocument({ link : '#{@linkable_id}' }),
+        InfiniteScroller = app.Components.InfiniteScroll;
+
+      function renderDocument(document, $container) {
+        var configured = configureDocumentView(document),
+          view       = configured[0],
+          collection = configured[1],
+          filter     = configured[2];
+        view.render();
+        $container.append(view.$el);
+        $container.removeClass('hidden');
+        if (collection && filter) {
+          configureCollectionScroll(view, collection, filter);
+        }
+      }
+
+      function configureDocumentView(document) {
+        var view, collection, filter;
+        if (document.isCollectionDocument()) {
+          var config = configureCollectionView(document);
+          view = config[0]; collection = config[1]; filter = config[2];
+          collection.fetch(filter.fetchOptions());
+        }
+        else if (document.hasParticipantEntity()) {
+          var config = configureParticipantView(document);
+          view = config[0]; collection = config[1]; filter = config[2];
+          collection.fetch(filter.fetchOptions());
+        }
+        else {
+          view = new app.Views.Documents.Detail({
+            model : document
+          });
+        }
+        return [ view, collection, filter ];
+      }
+
+      function configureCollectionView(document) {
+        var collection = document.members(),
+          filter = new app.Models.PaginatedFilter({}, {
+            paginator     : collection.paginator,
+            concept       : '#{@concept_slug}',
+            concept_title : '#{@concept_slug}'
+          }),
+          view = new app.Views.Documents.CollectionDocumentDetail({
+            model  : document,
+            filter : filter
+          });
+        return [ view, collection, filter ];
+      }
+
+      function configureParticipantView(document) {
+        var collection = document.participations();
+          filter = new app.Models.PaginatedFilter({}, {
+            paginator : collection.paginator
+          });
+          view = new app.Views.Documents.ParticipantDetail({
+            model : document,
+            filter : filter
+          });
+        return [ view, collection, filter ];
+      }
+
+      function configureCollectionScroll(view, collection, filter) {
+        InfiniteScroller.configure($('#fl-main'), collection, filter, {
+          threshold : 0.8
+        });
+        filter.on('change', function() { view.scrollToTop(); });
+      }
+
+      /* */
+
+      document.fetch().then(function() {
+        document.project().fetch();
+        renderDocument(document, $('#fl-primary'));
+      }).
+      fail(function() { console.log("Failed to load article.", arguments); });
+
+    });
+

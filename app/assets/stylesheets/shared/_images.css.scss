@@ -1,0 +1,31 @@
+
+.fg-img-container {
+
+  border: 1px solid black;
+  padding: 10px;
+
+  .fg-img-caption {
+
+    background: white;
+    padding: 10px;
+    margin-top: 5px;
+
+    .fg-img-credit {
+      margin-left: 5px;
+      font-style: italic;
+    }
+
+  }
+
+}
+
+.fg-img-left {
+  float: left;
+  margin-right: 10px;
+}
+
+.fg-img-right {
+  float: right;
+  margin-left: 10px;
+}
+

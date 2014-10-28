@@ -1,0 +1,89 @@
+
+@mixin fg-seamless {
+  margin: $nil;
+  padding: $nil;
+}
+
+@mixin fg-clear { clear: both; }
+
+@mixin fg-flat-button($color: #4ba3cc) {
+  @include sassy-button("flat", 2px, 0.8em, $color);
+}
+
+@mixin fg-leading { margin-bottom: $tiny; }
+@mixin fg-trailing { margin-top: $tiny; }
+
+@mixin fg-unpadded { padding: $nil; }
+
+@mixin fg-inline-list-right {
+  @include inline-list;
+  li {
+    @include float-right;
+    margin-left: $teeny;
+  }
+}
+
+@mixin fg-span-full() {
+  @include span-columns($total-columns full, $total-columns);
+  @include at-breakpoint($break) {
+    @include span-columns($break-columns full, $break-columns);
+  }
+}
+
+@mixin fg-span-half($omega:"") {
+  @include span-columns($total-columns / 2 $omega, $total-columns);
+  @include at-breakpoint($break) {
+    @include span-columns($break-columns / 2 $omega, $break-columns);
+  }
+}
+
+@mixin fg-span-quarter($omega:"") {
+  @include span-columns($total-columns / 4 $omega, $total-columns);
+  @include at-breakpoint($break) {
+    @include span-columns($break-columns / 4 $omega, $break-columns);
+  }
+}
+
+@mixin fg-span-3quarter($omega:"") {
+  @include span-columns($total-columns / 4 * 3 $omega, $total-columns);
+  @include at-breakpoint($break) {
+    @include span-columns($break-columns / 4 * 3 $omega, $break-columns);
+  }
+}
+
+
+@mixin fg-pane-half-base($which) {
+  @include fg-span-half($which);
+}
+
+@mixin fg-pane-quarter-base($which) {
+  @include fg-span-quarter($which);
+}
+
+@mixin fg-pane-3quarter-base($which) {
+  @include fg-span-3quarter($which);
+}
+
+@mixin fg-menu-unselected {
+  color: linen;
+  font-weight: normal;
+  a:hover { color: white; }
+}
+
+@mixin fg-menu-selected {
+  color: white;
+  font-weight: bold;
+  a:hover { color: black; }
+}
+
+@mixin fg-colors-inverted {
+  background: $borders-color;
+  color: $background-color;
+}
+
+@mixin fg-front-layer {
+  z-index: 19999; // qtip z-index = 15000
+  opacity: 1;
+}
+
+

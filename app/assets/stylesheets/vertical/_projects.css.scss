@@ -1,0 +1,242 @@
+
+#fv-projects.fv-show {
+
+  #fl-primary {
+    float: left;
+    width: 70%;
+  }
+
+}
+
+.ui-widget { font-size: 1em; }
+
+#fv-projects {
+
+  #fl-menubar {
+    li.fv-projects { @include fg-menu-selected; }
+  }
+
+  #fl-epilogue {
+
+    float: right;
+    width: 30%;
+
+    .fx-entities {
+      margin-top: $tiny;
+    }
+
+  }
+
+  .fx-project-tabs {
+
+    border: none;
+    background: none;
+
+    .ui-tabs-nav { // ul ui-widget-header
+
+      border: none; // ui-widget-header
+      background: none;
+      background-color: $borders-color;
+
+      padding: $nil;
+      padding-left: 12px;
+
+      li {
+        margin: $nil;
+        margin-left: 10px;
+        padding: 2px;
+        a { padding: $nil; }
+      }
+
+
+      .ui-state-default {
+
+        border: none;
+        background: none;
+        background-color: $borders-color;
+
+        a { color: $background-color; }
+
+      }
+
+      .ui-state-active { // li .ui-state-default .ui-tabs-active
+
+        border: none;
+        background: none;
+        background-color: $borders-color;
+
+        a { // ui-tabs-anchor
+          color: white;
+          font-weight: bold;
+        }
+
+      }
+
+    }
+
+    .ui-tabs-panel { // .ui-widget-content
+
+      border: none;
+      background: none;
+      padding: $tiny;
+      overflow: scroll;
+
+      li { margin-top: 5px; }
+
+      a { color: black; }
+      a:hover {
+        color: $borders-color;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+  .fx-sidebar { // ui-tabs ui-widget ui-widget-content
+
+    margin-left: $small;
+
+    border: 2px solid $borders-color;
+    background: none;
+    font-size: 80%;
+
+    .ui-tabs-nav { // ul ui-widget-header
+
+      border: none; // ui-widget-header
+      background: none;
+      background-color: $borders-color;
+
+      padding: $nil;
+      padding-left: 12px;
+
+      li {
+        margin: $nil;
+        margin-left: 10px;
+        padding: 2px;
+        a { padding: $nil; }
+      }
+
+      .ui-state-default {
+
+        border: none;
+        background: none;
+        background-color: $borders-color;
+
+        a { color: $background-color; }
+
+      }
+
+      .ui-state-active { // li .ui-state-default .ui-tabs-active
+
+        border: none;
+        background: none;
+        background-color: $borders-color;
+
+        a { // ui-tabs-anchor
+          color: white;
+          font-weight: bold;
+        }
+
+      }
+
+    }
+
+    .ui-tabs-panel { // .ui-widget-content
+
+      border: none;
+      background: none;
+      padding: $tiny;
+      overflow: scroll;
+
+      li { margin-top: 5px; }
+
+      a { color: black; }
+      a:hover {
+        color: $borders-color;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+  .fr-filter { font-size: 80%; }
+
+}
+
+.fx-projects-browser {
+
+  fieldset { border: none; }
+
+  .fr-filter {
+
+    float: right;
+    margin-right: $small;
+
+    fieldset {
+
+      .fg-labeled-input {
+        margin-top: $tiny;
+      }
+
+      label {
+        display: inline-block;
+        width: 90px;
+        font-weight: bold;
+      }
+
+    }
+
+  }
+
+  .fr-table {
+
+    clear: both;
+    min-height: 60px;
+
+    table { width: 100%; }
+
+    th {
+      background-color: $borders-color;
+      color: white;
+    }
+
+    th, td {
+      text-align: left;
+      padding: $teeny $tiny;
+    }
+
+    td {
+      padding-right: $small;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+  }
+
+  .fr-pager {
+
+    margin-top: $tiny;
+
+    background-color: $borders-color;
+    color: white;
+    a { color: white; }
+
+    menu {
+      float: right;
+      margin: $nil;
+
+      li {
+        list-style: none;
+        float: right;
+        margin-left: $small;
+      }
+    }
+
+  }
+
+}
+

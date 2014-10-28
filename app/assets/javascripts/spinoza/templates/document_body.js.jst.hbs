@@ -1,0 +1,46 @@
+
+<header>
+
+  <h3>
+    {{#if type}}
+      {{type}}:
+    {{/if}}
+    {{title}}
+  </h3>
+  {{#if date}}
+    <h4>{{date}}</h4>
+  {{/if}}
+
+  <dl class="clearfix">
+    <dt>Project</dt>
+    <dd><a href="/projects/{{project}}">{{project}}</a></dd>
+
+    <dt>Updated at</dt>
+    <dd>{{ago assessed}}</dd>
+
+    <dt>Updated by</dt>
+    <dd><a href="#">{{user}}</a></dd>
+  </dl>
+
+</header>
+
+{{#if body}}
+<section class="fx-article-body">
+  {{{body}}}
+</section>
+{{/if}}
+
+<section class="fx-links">
+  {{#if parties}}
+    <label>Participants</label>
+    <ul>
+    {{#each parties}}
+      <li>{{linkDocument this name=@key}}</li>
+    {{/each}}
+    </ul>
+  {{/if}}
+  <br/>
+</section>
+
+<section class="fx-article-members"></section>
+

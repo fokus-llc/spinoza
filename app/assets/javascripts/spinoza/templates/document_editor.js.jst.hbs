@@ -1,0 +1,55 @@
+
+<header>
+  <h3>Edit article</h3>
+</header>
+
+<section>
+
+  <div class="fg-input fx-projects">
+  </div>
+
+  <div class="fg-input">
+    <label>Title</label>
+    <input size="66" type="text" data-bind-value="document:title"/>
+  </div>
+
+  <div class="fg-input">
+    <label>Type of article</label>
+    <select name="document_entity_type">
+      <option value="perspective:person">Perspective: Person</option>
+      <option value="perspective:enterprise">Perspective: Business enterprise</option>
+      <option value="perspective:organization">Perspective: Organization</option>
+      <option value="perspective:agency">Perspective: Government agency</option>
+      <option value="perspective:project">Perspective: Project</option>
+      <option value="perspective:facility">Perspective: Facility</option>
+      <option value="perspective:region">Perspective: Geographical region</option>
+      <option value="perspective:country">Perspective: Country</option>
+      <option value="perspective:administrative-district">Perspective: Administrative district</option>
+      <option value="perspective:event">Perspective: Event</option>
+      <option value="collection:event">Collection: Events (Timeline)</option>
+    </select>
+  </div>
+
+  <div class="fx-markdown-input">
+    <textarea rows="9" style="resize: none"></textarea>
+  </div>
+
+  <fieldset class="fx-preview">
+    <legend>Preview</legend>
+    <div class="fx-output"></div>
+  </fieldset>
+
+  <div id="fx-biblio">
+    <div class="fx-content"></div>
+  </div>
+
+  <div class="fg-input">
+    <label>Comments</label>
+    <input size="66" type="text" data-bind-value="document:comments"/>
+  </div>
+
+  <ul class="fg-actions">
+    <li><input type="submit"/></li>
+  </ul>
+
+</section>

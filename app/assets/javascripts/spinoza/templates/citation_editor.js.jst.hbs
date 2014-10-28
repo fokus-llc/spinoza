@@ -1,0 +1,125 @@
+<div class="fx-citation">
+
+  <dl class="fg-properties fx-cite-binding">
+
+    <!--
+    <dt>Citation name</dt>
+    <dd>
+      <input
+        type="text"
+        size="60"
+        {{#if hasName}}
+        readonly="readonly"
+        {{/if}}
+        placeholder="required"
+        data-no-bind-value="citation:title"/>
+    </dd>
+    -->
+
+    {{#if isNew}}
+    <dt>Source type</dt>
+    <dd>
+      <select class=".fx-citation-type">
+
+        <option value="article">Article (news or journal)</option>
+        <!-- journal -->
+
+        <!--
+        <option value="book">Book</option>
+        -->
+        <!-- chapter -->
+
+        <!--
+        <option value="code">Constitution or legal code</option>
+        -->
+        <!--
+        <option value="contract">Contract</option>
+        -->
+
+        <!--
+        <option value="document">Document</option>
+        -->
+        <!-- court, executive (incl memo), multilateral, presidential -->
+
+        <!--
+        <option value="archive">Document archive or collection</option>
+
+        <option value="entry">Entry in collected work</option>
+        -->
+        <!-- essay, encyclopedia entry -->
+
+        <!--
+        <option value="film">Film</option>
+        -->
+        <!-- videoRecording ? -->
+
+        <!--
+        <option value="bill">Legislative bill or resolution</option>
+
+        <option value="debate">Legislative debate</option>
+
+        <option value="hearing">Legislative hearing</option>
+
+        <option value="gazette">Legislative or regulatory gazette</option>
+
+        <option value="interview">Interview</option>
+        -->
+
+        <!--
+        <option value="letter">Letter</option>
+
+        <option value="manuscript">Manuscript</option>
+        -->
+        <!--
+        <option value="memo">Memo</option>
+        -->
+
+        <!--
+        <option value="policy">Policy</option>
+        -->
+        <!--
+        <option value="briefing">Press briefing</option>
+        <option value="statement">Press release</option>
+        <option value="report">Published report</option>
+        -->
+        <!-- incl. govt commission -->
+
+        <!--
+        <option value="speech">Speech</option>
+
+        <option value="documentation">Technical documentation</option>
+        <option value="episode">Television/radio episode</option>
+        <option value="treaty">Treaty</option>
+
+        <option value="web-page">Web page</option>
+
+        <option value="work">Other</option>
+        -->
+
+        <!--
+        <optgroup label="Collected/composite works">
+          <option value="database">Database</option>
+          <option value="encyclopedia">Encyclopedia</option>
+          <option value="gazette">Legislative gazette</option>
+          <option value="periodical">Periodical</option>
+          <option value="issue">Periodical issue</option>
+          <option value="series">Broadcast series</option>
+          <option value="web-site">Web site</option>
+        </optgroup>
+        -->
+
+      </select>
+    </dd>
+    {{/if}}
+
+  </dl>
+
+  <div class="fx-source-details">
+  </div>
+
+  <ul class="fg-actions">
+    <li><input type="button" value="Cancel" class="fx-cancel"></li>
+    <li><input type="button" value="Update" class="fx-submit"></li>
+  </ul>
+
+</fieldset>

@@ -1,0 +1,55 @@
+
+#fl-navigation {
+
+  position: fixed;
+  top: $small;
+  right: $small;
+
+  nav {
+
+    display: block;
+
+    ul.fg-actions {
+      @include fg-inline-list-right;
+      li {
+        a {
+          @include fg-flat-button(sienna);
+          font-weight: bold;
+        }
+      }
+    }
+
+  }
+
+  menu {
+
+    padding-top: $medium;
+
+    li {
+      list-style: none;
+    }
+
+  }
+
+}
+
+#fl-subnav {
+
+  position: fixed;
+  top: $main-top;
+  right: 15px;
+  padding: $nil;
+  width: 250px;
+
+  li { @include no-bullets; }
+
+  a {
+    font-weight: bold;
+    color: sienna;
+  }
+
+}
+
+#fl-title {
+}
+

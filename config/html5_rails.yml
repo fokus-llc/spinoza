@@ -1,0 +1,17 @@
+
+defaults: &defaults
+  :google_account_id: ""  # Google Analytics
+  :google_api_key:    ""  # Google APIs
+
+:development:
+  <<: *defaults
+
+:test:
+  <<: *defaults
+
+:staging:
+  <<: *defaults
+
+:production:
+  <<: *defaults
+

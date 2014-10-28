@@ -1,0 +1,30 @@
+
+<header>
+
+  <h3>
+    {{capitalize entity_type}}:
+    {{title}}
+  </h3>
+
+</header>
+
+{{#if body}}
+<section class="fx-article-body">
+  {{{body}}}
+</section>
+{{/if}}
+
+<section class="fx-links">
+  {{#if parties}}
+    <label>Participants</label>
+    <ul>
+    {{#each parties}}
+      <li>{{linkDocument this name=@key}}</li>
+    {{/each}}
+    </ul>
+  {{/if}}
+  <br/>
+</section>
+
+<h4>Documents</h4>
+

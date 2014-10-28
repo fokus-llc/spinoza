@@ -1,0 +1,11 @@
+
+:javascript
+
+  window.SpinozaContext = {
+    dataUrl     : '#{ @data_url.to_s }',
+    credentials : {
+      username  : #{ current_user.try(:username).to_json },
+      password  : #{ api_token_hash.to_json }
+    }
+  };
+

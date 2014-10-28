@@ -1,0 +1,63 @@
+
+#fl-banner {
+
+
+  a { @include unstyled-link; }
+
+  h1 {
+    @include fg-seamless;
+    color: sienna;
+    margin: $nil;
+    margin-left: $tiny;
+  }
+
+  .fx-subtitle {
+    margin: $nil $small;
+    font-weight: bold;
+  }
+
+  nav {
+
+    clear: both;
+    width: 100%;
+    opacity: 1;
+    background-color: $borders-color;
+
+    position: fixed;
+    top: 60px;
+    height: 35px;
+
+    ul {
+
+      position: fixed;
+      top: 68px;
+
+      width: 100%;
+
+      li { @include fg-menu-unselected; }
+
+      li.fv-search {
+
+        float: right;
+        margin-right: $small;
+        padding: $nil;
+        padding-right: 10px;
+
+        width: 25%;
+
+        form {
+          position: relative;
+          bottom: 3px;
+          display: inline;
+          width: 100%;
+          input { width: 100%; }
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
